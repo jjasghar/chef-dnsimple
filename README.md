@@ -10,21 +10,18 @@ automatic DNS configuration via DNSimple's API.
 * A DNSimple account at https://dnsimple.com
 * Chef 11 or newer (Feel free to send a pull request for Chef 10.x support)
 
-## Deprecation Warning
+## Attributes
 
-* The 2.x series of this cookbook will drop support for the Fog gem
-  and username/password authentication along with Chef 11 support. Please
-  version pin in your metadata or Berksfile to the nearest 1.x minor version
-  to maintain backward compatibility like so: `cookbook "dnsimple", "~> 1.2.0"`
+- `default["dnsimple"]["version"]`: The version of the DNSimple gem to install
 
 ## Resources/Providers
 
 dnsimple\_record
 ----------------
 
-Manage a DNS resource record through the DNSimple API. This LWRP uses
-the [fog Ruby library](http://rubygems.org/gems/fog) to connect and
-use the API.
+Manage a DNS resource record through the DNSimple API. This resource uses
+the [dnsimple Ruby library](http://rubygems.org/gems/dnsimple) to connect and
+use the DNSimple API.
 
 ### Actions:
 
@@ -57,6 +54,10 @@ access tokens are also not supported at this time.  Domain based tokens will be
 supported in a future release.
 
 ### Examples
+
+Note that these examples assume you have the username, domain, and token
+attributes set as they are implied in these examples. You can always specify
+those attributes directly if you want to use other domains or access contexts.
 
 ```ruby
     dnsimple_record "create an A record using the DEPRECATED username/password authentication" do
@@ -102,21 +103,32 @@ supported in a future release.
 
 ## Usage
 
-Add the the `dnsimple` recipe to a node's run list, or with
-`include_recipe` to install the [fog](http://rubygems.org/gems/fog)
-gem, which is used to interact with the DNSimple API. See
-examples of the LWRP usage above.
+Add the dnsimple cookbook to your cookbook's metadata and it will automatically
+install the dnsimple gem and make the dnsimple\_record resource available.
 
 ## Testing
 
 To run the tests across all platforms, you want to grab the latest [ChefDK][]
+<<<<<<< 54643d8b9c01c94a6dd0864a6c94969cc820c8ea
 install [VirtualBox][], [Vagrant][], and the [Chefstyle][] gem into your ChefDK
 then run `chef exec kitchen test`.
+=======
+install [VirtualBox][], [Vagrant][], and the following gems into your ChefDK:
+
+* [Chefstyle][]
+* [dnsimple][dnsimple-gem]
+* [webmock][]
+
+Then run `chef exec rake quick` for unit and style tests.
+>>>>>>> Cleanup and update README
 
 ## License and Authors
 
 * Author:: [Aaron Kalin](https://github.com/martinisoft)
+<<<<<<< 54643d8b9c01c94a6dd0864a6c94969cc820c8ea
 * Author:: [David Aronsohn](https://github.com/tbunnyman)
+=======
+>>>>>>> Cleanup and update README
 * Author:: [Darrin Eden](https://github.com/dje)
 * Author:: [Joshua Timberman](https://github.com/jtimberman)
 * Author:: [Jose Luis Salas](https://github.com/josacar)
@@ -139,4 +151,9 @@ limitations under the License.
 [VirtualBox]: https://www.virtualbox.org/wiki/Downloads
 [Vagrant]: https://www.vagrantup.com/downloads.html
 [Chefstyle]: https://github.com/chef/chefstyle
+<<<<<<< 54643d8b9c01c94a6dd0864a6c94969cc820c8ea
 [api token]: https://developer.dnsimple.com/v1/authentication/#api-token
+=======
+[dnsimple-gem]: https://rubygems.org/gems/dnsimple
+[webmock]: https://rubygems.org/gems/webmock
+>>>>>>> Cleanup and update README
