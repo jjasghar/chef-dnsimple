@@ -3,7 +3,6 @@
 A chef resource for automated DNS configuration via the [dnsimple](https://dnsimple.com/) API.
 
 [![Build Status](https://travis-ci.org/dnsimple/chef-dnsimple.png?branch=master)](https://travis-ci.org/dnsimple/chef-dnsimple)
-[![Build Status](https://jenkins-01.eastus.cloudapp.azure.com/job/dnsimple-cookbook/badge/icon)](https://jenkins-01.eastus.cloudapp.azure.com/job/dnsimple-cookbook/)
 
 ## DEPRECATION WARNING
 
@@ -186,3 +185,5 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+![Chef Certified](https://i.imgur.com/iArFD5m.png)
